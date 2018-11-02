@@ -1,29 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:views="clr-namespace:VejenFremTilDig.Views"
-            x:Class="VejenFremTilDig.Views.MainPage">
-    <TabbedPage.Children>
-        <NavigationPage Title="Browse">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
-            <x:Arguments>
-                <views:ItemsPage />
-            </x:Arguments>
-        </NavigationPage>
-        
-        <NavigationPage Title="About">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_about.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
-            <x:Arguments>
-                <views:AboutPage />
-            </x:Arguments>
-        </NavigationPage>
-    </TabbedPage.Children>
-</TabbedPage>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:VejenFremTilDig;assembly=VejenFremTilDig"
+             x:Class="VejenFremTilDig.Views.MainPage"
+             Title="Vejen Frem Til Dig">
+    <ContentPage.Content>
+        <Grid x:Name="MainMenu" RowSpacing="30" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Button x:Name="btn_Calls" Grid.Column="0" Grid.Row="0" BackgroundColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" HeightRequest="150" WidthRequest="150"/>
+            <Button x:Name="btn_Videos" Grid.Column="1" Grid.Row="0" BackgroundColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" HeightRequest="150" WidthRequest="150"/>
+            <Button x:Name="btn_Messages" Grid.ColumnSpan="2" Grid.Row="1" BackgroundColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" HeightRequest="150" WidthRequest="150" Image="MessageIcon.png"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

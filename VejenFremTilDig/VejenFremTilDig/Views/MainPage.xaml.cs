@@ -6,7 +6,7 @@ using Xamarin.Forms.Xaml;
 namespace VejenFremTilDig.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : TabbedPage
+    public partial class MainPage : ContentPage
     {
         public MainPage()
         {
