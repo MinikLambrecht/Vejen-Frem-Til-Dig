@@ -1,23 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:VejenFremTilDig;assembly=VejenFremTilDig"
+             xmlns:local="clr-namespace:VejenFremTilDig"
              x:Class="VejenFremTilDig.Views.MainPage"
              Title="Vejen Frem Til Dig">
     <ContentPage.Content>
-        <Grid x:Name="MainMenu" RowSpacing="30" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid x:Name="MainMenu" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
                 <ColumnDefinition />
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
-            <Button x:Name="btn_Calls" Grid.Column="0" Grid.Row="0" BackgroundColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" HeightRequest="150" WidthRequest="150"/>
-            <Button x:Name="btn_Videos" Grid.Column="1" Grid.Row="0" BackgroundColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" HeightRequest="150" WidthRequest="150"/>
-            <Button x:Name="btn_Messages" Grid.ColumnSpan="2" Grid.Row="1" BackgroundColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" HeightRequest="150" WidthRequest="150" Image="MessageIcon.png"/>
+
+            <Button Grid.Column="0" Grid.Row="0" />
+
+            <Image x:Name="Btn_Calls" BackgroundColor="Red" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="2">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Btn_Calls_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Image x:Name="Btn_Videos" BackgroundColor="Blue" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="2">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Btn_Videos_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Source="MessageIMG.png" BackgroundColor="White" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="4">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Btn_Messages_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
