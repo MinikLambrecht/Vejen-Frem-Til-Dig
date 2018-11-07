@@ -12,9 +12,10 @@ namespace VejenFremTilDig.Views
             InitializeComponent();
         }
 
-        private void Btn_Calls_Tapped(object sender, EventArgs e)
+        async void Btn_Calls_Tapped(object sender, EventArgs e)
         {
-            
+            ContactsPage contactsPage = new ContactsPage();
+            await Navigation.PushAsync(contactsPage);
         }
 
         private void Btn_Videos_Tapped(object sender, EventArgs e)
