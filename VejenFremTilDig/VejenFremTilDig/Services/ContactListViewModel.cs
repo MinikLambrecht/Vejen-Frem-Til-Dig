@@ -45,10 +45,31 @@ namespace VejenFremTilDig.Services
             };
         }
 
-        public void AddContact(ObservableCollection<Contact> contacts)
+        public void AddContact(Contact contact)
         {
-            Contact contact = new Contact { Id = Guid.NewGuid().ToString(), Name = "Bob", Number = 76889452 };
-            contacts.Add(contact);
+            Contacts.Add(contact);
+        }
+
+        public ObservableCollection<Contact> getContacts()
+        {
+            return Contacts;
+        }
+
+        public void RemoveContact(int index)
+        {
+            Contacts.RemoveAt(index);
+        }
+
+        public void UpdateContact(int index, Contact contact)
+        {
+            Contacts.Insert(index, contact);
+        }
+
+        public int GetSelectedContactIndex(Contact contact)
+        {
+            int index = Contacts.IndexOf(contact);
+
+            return index;
         }
     }
 }

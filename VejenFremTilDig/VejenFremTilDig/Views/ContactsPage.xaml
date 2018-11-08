@@ -3,17 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VejenFremTilDig.Views.ContactsPage"
              Title="Opkald">
-
+    
     <ContentPage.Content>
-        <StackLayout Spacing="0" BackgroundColor="White">
+        <StackLayout Spacing="0">
             <StackLayout HeightRequest="50" Orientation="Horizontal">
                 <Image Source="PhoneIcon" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnAddClick"/>
+                        <TapGestureRecognizer Tapped="OnCallClicked"/>
                     </Image.GestureRecognizers>
                 </Image>
             </StackLayout>
-            <ListView x:Name="lv_Contacts" ItemsSource="{Binding Contacts}" VerticalOptions="FillAndExpand" CachingStrategy="RecycleElement">
+            <ListView x:Name="lv_Contacts" ItemsSource="{Binding Contacts}" ItemTapped="OnItemTapped" VerticalOptions="FillAndExpand" CachingStrategy="RecycleElement">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -24,6 +24,31 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <StackLayout HeightRequest="50" Orientation="Horizontal">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="AddIMG" Grid.Column="0" BackgroundColor="LightGray">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnAddClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="RemoveIMG" Grid.Column="1" BackgroundColor="LightGray">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnRemoveClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="EditIMG" Grid.Column="2" BackgroundColor="LightGray">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnEditClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

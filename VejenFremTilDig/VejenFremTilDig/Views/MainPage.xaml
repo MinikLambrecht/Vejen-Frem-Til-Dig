@@ -5,11 +5,15 @@
              Title="Vejen Frem Til Dig">
     
     <ContentPage.Content>
-        <Grid x:Name="MainMenu" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid x:Name="MainMenu" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
                 <ColumnDefinition/>
-                <ColumnDefinition />
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -23,17 +27,17 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             
-            <Image Source="CallIMG" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="2">
+            <Image Source="CallIMG" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="2" Grid.Row="2" BackgroundColor="LightGray">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Btn_Calls_Tapped"/>
                 </Image.GestureRecognizers>
             </Image>
-            <Image Source="VideoIMG" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="2">
+            <Image Source="VideoIMG" Grid.Column="4" Grid.ColumnSpan="4" Grid.RowSpan="2" Grid.Row="2" BackgroundColor="LightGray">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Btn_Videos_Tapped"/>
                 </Image.GestureRecognizers>
             </Image>
-            <Image Source="MessageIMG" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="4">
+            <Image Source="MessageIMG" Grid.Column="2" Grid.ColumnSpan="4" Grid.RowSpan="2" Grid.Row="4" BackgroundColor="LightGray">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Btn_Messages_Tapped"/>
                 </Image.GestureRecognizers>

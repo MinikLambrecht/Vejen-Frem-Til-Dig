@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VejenFremTilDig.Views.AddContactPage"
+             Title="Tilføj Kontakt">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Entry x:Name="entry_Name" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" TextColor="Black" Placeholder="Navn" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="2" Grid.RowSpan="1"/>
+            <Entry x:Name="entry_Number" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  TextColor="Black" Placeholder="Nummer" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="3" Grid.RowSpan="1" Keyboard="Telephone" />
+
+            <Label Text="Tilføj" FontSize="50" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="7" BackgroundColor="LightGray">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnAddContactClicked"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
