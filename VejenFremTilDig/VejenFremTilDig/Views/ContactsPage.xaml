@@ -1,20 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:VejenFremTilDig"
-             x:Class="VejenFremTilDig.Views.ContactsPage">
+             x:Class="VejenFremTilDig.Views.ContactsPage"
+             Title="Opkald">
 
     <ContentPage.Content>
-        <StackLayout Spacing="0">
+        <StackLayout Spacing="0" BackgroundColor="White">
             <StackLayout HeightRequest="50" Orientation="Horizontal">
-                <Label Text="Opkald" FontFamily="Verdana" HorizontalOptions="FillAndExpand" FontAttributes="Bold" FontSize="35" BackgroundColor="Purple" />
-                <Image Source="CallIMG" />
+                <Image Source="PhoneIcon" HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnAddClick"/>
+                    </Image.GestureRecognizers>
+                </Image>
             </StackLayout>
-            <ListView BackgroundColor="Blue">
+            <ListView x:Name="lv_Contacts" ItemsSource="{Binding Contacts}" VerticalOptions="FillAndExpand" CachingStrategy="RecycleElement">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text ="{Binding }"/>
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <Label Text="{Binding Name}" FontSize="30" TextColor="Black"/>
+                            </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
