@@ -21,7 +21,7 @@ namespace VejenFremTilDig.Views
             entryNumber = this.FindByName<Entry>("entry_Number");
 
             var name = entryName.Text;
-            var number = Int32.Parse(entryNumber.Text);
+            var number = entryNumber.Text;
 
             ContactsPage contactPage = new ContactsPage();
 

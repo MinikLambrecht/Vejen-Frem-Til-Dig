@@ -18,7 +18,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                                <Label Text="{Binding Name}" FontSize="30" TextColor="Black"/>
+                                <Label FontSize="30" Text="{Binding Name}" TextColor="Black"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -31,7 +31,7 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-
+                    
                     <Image Source="AddIMG" Grid.Column="0" BackgroundColor="LightGray">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnAddClicked" />

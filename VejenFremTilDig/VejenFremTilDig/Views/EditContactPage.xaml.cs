@@ -23,7 +23,7 @@ namespace VejenFremTilDig.Views
 			InitializeComponent ();
 		}
 
-        public void GetInfo(int index, string guid, string name, int number)
+        public void GetInfo(int index, string guid, string name, string number)
         {
             entryEdit_Name.Text = name;
             entryEdit_Number.Text = number.ToString();
@@ -37,9 +37,7 @@ namespace VejenFremTilDig.Views
             entryNumber = this.FindByName<Entry>("entryEdit_Number");
 
             var name = entryName.Text;
-            var number = Int32.Parse(entryNumber.Text);
-
-            DisplayAlert("k", Index.ToString(), "K");
+            var number = entryNumber.Text;
 
             ContactsPage contactsPage = new ContactsPage();
             await Navigation.PushAsync(contactsPage);

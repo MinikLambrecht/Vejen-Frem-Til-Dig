@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.Messaging;
+using System;
 using VejenFremTilDig.Models;
 using VejenFremTilDig.Services;
 using Xamarin.Forms;
@@ -12,44 +13,25 @@ namespace VejenFremTilDig.Views
         private ContactListViewModel ListviewModel;
         private int SelectedItemIndex;
 
-        private bool firstLaunch = true;
-
         private string _Guid { get; set; }
         private string Name { get; set; }
-        private int Number { get; set; }
+        private string Number { get; set; }
 
         public ContactsPage()
         {
             InitializeComponent();
 
-            firstLaunch = ((bool)Application.Current.Properties["firstLaunch"]);
             ListviewModel = new ContactListViewModel();
             BindingContext = ListviewModel;
         }
 
-        protected override void OnAppearing()
-        {
-            if (firstLaunch == true)
-            {
-                firstLaunch = false;
-                Application.Current.Properties["firstLaunch"] = firstLaunch;
-                DisplayAlert("Test", "First time!", "OK");
-            }
-            else
-            {
-                DisplayAlert("Test", "Not First Time!", "Ok");
-            }
-        }
-
-        protected override void OnDisappearing()
-        {
-            Application.Current.Properties["Contacts"] = ListviewModel;
-            Application.Current.SavePropertiesAsync();
-        }
-
         private void OnCallClicked(object sender, EventArgs e)
         {
-            
+            var PhoneCallTask = CrossMessaging.Current.PhoneDialer;
+            if (PhoneCallTask.CanMakePhoneCall)
+            {
+                PhoneCallTask.MakePhoneCall(Number.ToString());
+            }
         }
 
         async void OnAddClicked(object sender, EventArgs e)
@@ -58,7 +40,7 @@ namespace VejenFremTilDig.Views
             await Navigation.PushAsync(addContactPage);
         }
 
-        public void AddContact(string name, int number)
+        public void AddContact(string name, string number)
         {
             Contact contact = new Contact { Id = Guid.NewGuid().ToString(), Name = name, Number = number };
             ListviewModel.AddContact(contact);
@@ -77,7 +59,7 @@ namespace VejenFremTilDig.Views
             editContactPage.GetInfo(SelectedItemIndex ,_Guid, Name, Number);
         }
 
-        public void EditContact(int index, string guid, string name, int number)
+        public void EditContact(int index, string guid, string name, string number)
         {
             Contact contact = new Contact() { Id = guid, Name = name, Number = number };
             ListviewModel.UpdateContact(index, contact);

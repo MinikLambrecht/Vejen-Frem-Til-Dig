@@ -10,37 +10,37 @@ namespace VejenFremTilDig.Services
 
         public ContactListViewModel()
         {
-            Contacts = new ObservableCollection<Contact>
+            Contacts = new ObservableCollection<Contact>()
             {
-                new Contact
+                new Contact()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = "Lone",
-                    Number = 97485279
+                    Number = "79845582"
                 },
-                new Contact
+                new Contact()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = "Bodil",
-                    Number = 64558739
+                    Number = "94865579"
                 },
-                new Contact
+                new Contact()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = "IB",
-                    Number = 81225798
+                    Number = "94887628"
                 },
-                new Contact
+                new Contact()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = "Åse",
-                    Number = 82792684
+                    Number = "46795813"
                 },
-                new Contact
+                new Contact()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Name = "Rasmus",
-                    Number = 10557916
+                    Number = "94678542"
                 }
             };
         }
@@ -50,7 +50,7 @@ namespace VejenFremTilDig.Services
             Contacts.Add(contact);
         }
 
-        public ObservableCollection<Contact> getContacts()
+        public ObservableCollection<Contact> GetContacts()
         {
             return Contacts;
         }

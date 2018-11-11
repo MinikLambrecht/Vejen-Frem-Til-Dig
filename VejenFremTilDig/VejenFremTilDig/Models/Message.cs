@@ -4,10 +4,10 @@ using System.Text;
 
 namespace VejenFremTilDig.Models
 {
-    public class Contact
+    public class Message
     {
         public string Id { get; set; }
         public string Name { get; set; }
-        public string Number { get; set; }
+        public string Msg { get; set; }
     }
 }

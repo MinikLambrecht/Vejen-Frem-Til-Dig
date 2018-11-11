@@ -18,14 +18,16 @@ namespace VejenFremTilDig.Views
             await Navigation.PushAsync(contactsPage);
         }
 
-        private void Btn_Videos_Tapped(object sender, EventArgs e)
+        async void Btn_Videos_Tapped(object sender, EventArgs e)
         {
-
+            VideoPage videoPage = new VideoPage();
+            await Navigation.PushAsync(videoPage);
         }
 
-        private void Btn_Messages_Tapped(object sender, EventArgs e)
+        async void Btn_Messages_Tapped(object sender, EventArgs e)
         {
-            DisplayAlert("Alert", "Tap gesture reconganised", "OK");
+            MessagesPage messagesPage = new MessagesPage();
+            await Navigation.PushAsync(messagesPage);
         }
     }
 }
